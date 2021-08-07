@@ -10,6 +10,9 @@ public class PlayerScript : MonoBehaviour
 
     private int desiredLane = 1; //0: left, 1:middle, 2:right
     public float laneDistance = 4; // the distance between two lane
+
+    public float jumpForce;
+    public float Gravity = -20.0f;
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -19,6 +22,20 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         direction.z = forwardSpeed;
+
+        if(controller.isGrounded)
+        {
+            direction.y = -1;
+            if(Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Jump();
+            }
+        }
+        else
+        {
+            direction.y += Gravity * Time.deltaTime;
+        }
+
 
         //gather the input where lane we should be
         if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -52,5 +69,10 @@ public class PlayerScript : MonoBehaviour
     private void FixedUpdate()
     {
         controller.Move(direction*Time.deltaTime);
+    }
+
+    private void Jump()
+    {
+        direction.y = jumpForce;
     }
 }

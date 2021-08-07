@@ -62,8 +62,16 @@ public class PlayerScript : MonoBehaviour
              targetPosition += Vector3.right * laneDistance;
          }
 
-         transform.position = Vector3.Lerp(transform.position, targetPosition, 80* Time.deltaTime);
-
+        //  transform.position = Vector3.Lerp(transform.position, targetPosition, 80* Time.deltaTime);
+        //  controller.center = controller.center;
+        if(transform.position == targetPosition)
+            return;
+        Vector3 diff = targetPosition - transform.position;
+        Vector3 moveDir = diff.normalized * 25 * Time.deltaTime;
+        if(moveDir.sqrMagnitude < diff.sqrMagnitude)
+            controller.Move(moveDir);
+        else
+            controller.Move(diff);
     }
 
     private void FixedUpdate()

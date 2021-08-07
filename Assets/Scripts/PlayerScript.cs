@@ -21,6 +21,8 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!PlayerManager.isGameStarted)
+            return;
         direction.z = forwardSpeed;
 
         if(controller.isGrounded)
@@ -76,6 +78,8 @@ public class PlayerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(!PlayerManager.isGameStarted)
+            return;
         controller.Move(direction*Time.deltaTime);
     }
 

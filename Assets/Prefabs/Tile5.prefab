@@ -131,19 +131,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7092373710836566892
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8198658466557179979}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.4932568, y: 1.4932567, z: 1.333053}
-  m_Center: {x: -0.000000059604645, y: -0.000000059604638, z: -0.12902878}
 --- !u!65 &2017138458410976259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -157,6 +144,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.017001547, y: 0.017001543, z: 0.01688522}
   m_Center: {x: 0, y: 2.8188181e-18, z: -0.0004426285}
+--- !u!65 &7092373710836566892
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8198658466557179979}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4932568, y: 1.4932567, z: 1.333053}
+  m_Center: {x: -0.000000059604645, y: -0.000000059604638, z: -0.12902878}
 --- !u!1001 &2017138458410976254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211,6 +211,10 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 2fea900cb821572499540edd2a78ca4e, type: 3}
       propertyPath: m_Name
       value: RoadWorksBarrierHigh
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2fea900cb821572499540edd2a78ca4e, type: 3}
+      propertyPath: m_TagString
+      value: block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fea900cb821572499540edd2a78ca4e, type: 3}
@@ -274,6 +278,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: bbf4eaaac666b4406ba6182fce2f41a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6790012926874220174, guid: bbf4eaaac666b4406ba6182fce2f41a2, type: 3}
+      propertyPath: m_TagString
+      value: block
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bbf4eaaac666b4406ba6182fce2f41a2, type: 3}
       propertyPath: m_Name

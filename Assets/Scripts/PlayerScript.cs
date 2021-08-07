@@ -83,4 +83,12 @@ public class PlayerScript : MonoBehaviour
     {
         direction.y = jumpForce;
     }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.transform.tag == "block")
+        {
+            PlayerManager.gameOver = true;
+        }
+    }
 }

@@ -7,12 +7,14 @@ public class PlayerScript : MonoBehaviour
     private CharacterController controller;
     private Vector3 direction;
     public float forwardSpeed = 10.0f;
+    public float maxSpeed;
 
     private int desiredLane = 1; //0: left, 1:middle, 2:right
     public float laneDistance = 4; // the distance between two lane
 
     public float jumpForce;
     public float Gravity = -20.0f;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -23,6 +25,10 @@ public class PlayerScript : MonoBehaviour
     {
         if(!PlayerManager.isGameStarted)
             return;
+        // increase speed
+        if(forwardSpeed < maxSpeed)
+            forwardSpeed += 0.1f * Time.deltaTime;
+        
         direction.z = forwardSpeed;
 
         if(controller.isGrounded)
@@ -38,7 +44,7 @@ public class PlayerScript : MonoBehaviour
             direction.y += Gravity * Time.deltaTime;
         }
 
-
+      
         //gather the input where lane we should be
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -52,6 +58,7 @@ public class PlayerScript : MonoBehaviour
             if(desiredLane == -1)
                 desiredLane = 0;
         }
+    
         //calculate where we should be in the future
          Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
 
@@ -95,4 +102,5 @@ public class PlayerScript : MonoBehaviour
             PlayerManager.gameOver = true;
         }
     }
+
 }

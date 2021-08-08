@@ -3,15 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Events : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
-    public void ReplayGame()
+    public void PlayGame()
     {
         SceneManager.LoadScene("GamePlay");
     }
-
     public void QuitGame()
     {
-        SceneManager.LoadScene("Menu");
+        Application.Quit();
     }
 }
